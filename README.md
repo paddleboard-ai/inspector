@@ -12,6 +12,15 @@ The Data Inspector CLI Tool is a command-line utility designed to quickly analyz
 - Identifies numerical outliers using the Interquartile Range (IQR) method
 - Determines if the dataset is sparse or dense
 
+## Focus and caveats
+
+- It has one and only one use case: for the developer/data scientist/data engineer to get a quick read of the data before they delve into it
+- The focus of this tool is fast (i.e. zero config) feedback about local data sets. This is why it has no command line flags or options of any kind 
+- Minimal set of essential metrics about a dataset
+- Only csv and parquet files are supported
+- This tool is _not_ meant to replace comprehensive data quality  tools like Soda, dbt tests, GX, Monte Carlo, etc.
+- Not intended to be used in data or CI pipelines.
+
 ## Installation
 
 To install the Data Inspector CLI Tool, follow these steps:
@@ -59,6 +68,25 @@ The tool will provide the following information about your dataset:
 - Number of rows with a high percentage of null values
 - Number of rows with numerical outliers
 - Whether the dataset is considered sparse or dense
+
+```
+$ inspector my_data_example.csv 
+Detected time series column: LVLDATE
+Sample date value: 2024-05-05
+Total rows: 80
+Total columns: 11
+Time series: True
+Index Column: LVLDATE
+Rows with null values: 4
+Columns with null values: 3
+Columns with null values:
+  SUPP2: 2 null values
+  SUPP4: 1 null values
+  RES2: 1 null values
+Rows with many null values (>10.0% null): 0
+Rows with numerical outliers: 1
+Sparse or Dense: Dense
+```
 
 ## Requirements
 

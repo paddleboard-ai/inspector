@@ -2,6 +2,12 @@ import click
 import pandas as pd
 import numpy as np
 from pathlib import Path
+import warnings
+
+# Suppress pandas deprecation warnings
+warnings.filterwarnings("ignore", category=pd.errors.SettingWithCopyWarning)
+warnings.filterwarnings("ignore", category=FutureWarning)
+warnings.filterwarnings("ignore", category=UserWarning)
 
 @click.command()
 @click.argument('file_path', type=click.Path(exists=True))
