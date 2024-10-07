@@ -4,7 +4,7 @@ import numpy as np
 from pathlib import Path
 import warnings
 
-# Suppress pandas deprecation warnings
+# Suppress pandas warnings
 warnings.filterwarnings("ignore", category=pd.errors.SettingWithCopyWarning)
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=UserWarning)
@@ -37,7 +37,7 @@ def inspect_file(file_path):
         index_column = potential_date_columns[potential_date_columns == total_rows].index[0]
         date_sample = df[index_column].iloc[0]
         click.echo(f"Detected time series column: {index_column}")
-        click.echo(f"Sample date value: {date_sample}")
+        click.echo(f"Sample time value: {date_sample}")
     else:
         index_column = "None"
 
@@ -49,7 +49,7 @@ def inspect_file(file_path):
     columns_with_nulls = null_counts_by_column[null_counts_by_column > 0]
 
     # Check for rows with many empty or null values
-    null_threshold = 0.1  # 50% of columns are null
+    null_threshold = 0.1  # 10% of columns are null
     rows_with_many_nulls = (null_counts_by_row > (total_columns * null_threshold)).sum()
 
     # Check for numerical outliers (using IQR method)

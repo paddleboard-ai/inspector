@@ -1,6 +1,6 @@
 # Data Inspector CLI Tool
 
-The Data Inspector CLI Tool is a command-line utility designed to quickly analyze CSV and Parquet files for data quality issues. It provides insights into the structure and content of your datasets, helping you identify potential problems and characteristics of your data.
+The Data Inspector CLI Tool is a command-line utility designed to quickly analyze CSV and Parquet files for data quality issues. It provides insights into the structure and content of your datasets, helping you identify potential problems and characteristics of your data before you dive in.
 
 ## Features
 
@@ -15,10 +15,11 @@ The Data Inspector CLI Tool is a command-line utility designed to quickly analyz
 ## Focus and caveats
 
 - It has one and only one use case: for the developer/data scientist/data engineer to get a quick read of the data before they delve into it
-- The focus of this tool is fast (i.e. zero config) feedback about local data sets. This is why it has no command line flags or options of any kind 
+- The focus of this tool is fast feedback about local, flat file data sets.
+- Zero configuration. Not even command line flags =)
 - Minimal set of essential metrics about a dataset
 - Only csv and parquet files are supported
-- This tool is _not_ meant to replace comprehensive data quality  tools like Soda, dbt tests, GX, Monte Carlo, etc.
+- This tool is _not_ meant to replace comprehensive data quality tools like Soda, dbt tests, GX, Monte Carlo, etc.
 - Not intended to be used in data or CI pipelines.
 
 ## Installation
