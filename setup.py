@@ -8,6 +8,7 @@ setup(
     install_requires=[
         'Click',
         'pandas',
+        'pyarrow',
     ],
     entry_points='''
         [console_scripts]

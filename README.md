@@ -111,6 +111,13 @@ To set up the development environment:
    pip install -e .
    ```
 
+## Testing
+
+To run the unit tests:
+
+1. `pip install pytest`
+2. `pytest test_inspector.py`
+
 ## Contributing
 
 Contributions to the Data Inspector CLI Tool are welcome! Please feel free to submit a Pull Request.
